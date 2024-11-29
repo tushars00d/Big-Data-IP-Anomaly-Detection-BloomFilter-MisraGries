@@ -119,6 +119,31 @@ Highlights the accuracy trade-off (minor false positives) for the memory and spe
 ![image](https://github.com/user-attachments/assets/dcf56960-0464-4969-ab56-fd3aa6553f08)
 
 
+Here are the tables for direct copying:
+
+### Feature Comparison: Traditional vs. Bloom Filter + Misra-Gries
+
+| **Feature**                      | **Traditional Approach**        | **Bloom Filter + Misra-Gries**      |
+|----------------------------------|---------------------------------|-------------------------------------|
+| **Scalability**                  | Limited                         | High                                |
+| **Memory Usage**                 | High                            | Low                                 |
+| **Processing Time**              | Longer                          | Faster                              |
+| **False Positives**              | None                            | Minor (tunable error rate)          |
+| **Real-Time Detection**          | No                              | Yes                                 |
+| **Blacklist Updates**            | Static                          | Dynamic                             |
+
+---
+
+### Performance Metrics
+
+| **Metric**                       | **Traditional Approach**        | **Bloom Filter Approach**          |
+|----------------------------------|---------------------------------|------------------------------------|
+| **Processing Time**              | 0.04 seconds                    | 0.03 seconds                      |
+| **Memory Usage**                 | 17 KB                           | 14 KB                              |
+| **Detection Accuracy**           | 98%                             | 92%                                |
+
+Feel free to use or adapt these!
+
 ---
 
 ## Getting Started
