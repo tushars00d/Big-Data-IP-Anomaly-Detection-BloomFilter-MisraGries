@@ -2,11 +2,6 @@
 A scalable and efficient real-time IP anomaly detection system leveraging Bloom Filters and the Misra-Gries Algorithm to identify malicious traffic, detect heavy hitters, and dynamically update blacklists with minimal memory usage
 Here's a structured and professional README template for your project, complete with placeholders for analysis graphs and detailed explanations of the **Bloom Filter** and **Misra-Gries Algorithm** concepts.
 
----
-
-# Efficient IP Address Anomaly Detection Using Bloom Filters and Misra-Gries Algorithm
-
-
 ## Overview
 
 This project presents a scalable, efficient, and real-time approach to detecting anomalous IP addresses in network traffic. By combining **Bloom Filters** with the **Misra-Gries Algorithm**, we provide a memory-efficient solution capable of identifying suspicious IPs, heavy hitters, and dynamically updating blacklists. This approach is ideal for applications in cybersecurity, DDoS prevention, and enterprise network monitoring.
