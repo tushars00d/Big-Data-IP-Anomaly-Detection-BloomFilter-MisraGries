@@ -13,6 +13,40 @@ This project presents a scalable, efficient, and real-time approach to detecting
 
 ---
 
+## Workflow of the Project
+
+The project workflow systematically processes incoming IP addresses through a multi-stage detection pipeline:
+
+1. **Initial IP Check**:
+   - Incoming IP addresses are first checked against the **Bad IP Bloom Filter**.
+   - If a match is found, the IP is immediately classified as **Prohibited** and restricted from entering the system.
+
+2. **Safe IP Check**:
+   - IPs that pass the Bad IP Bloom Filter are then checked against the **Good IP Bloom Filter**.
+   - If a match is found, the IP is considered **Safe**, and the system does not track its further entries to save memory and processing power.
+
+3. **Risky IP Tagging**:
+   - IPs that do not match either the Bad or Good Bloom Filter are classified as **Risky**.
+   - The system begins tracking their occurrences in the data stream.
+
+4. **Heavy Hitter Detection**:
+   - The **Misra-Gries Algorithm** is applied to the **Risky IPs** to count their occurrences and identify **Heavy Hitters** (frequently appearing IPs that exceed a predefined threshold).
+   - These heavy hitters are considered **Hazardous** and flagged for further action.
+
+5. **Blacklist Update**:
+   - Hazardous IPs identified as heavy hitters are dynamically added to the **Bad IP Bloom Filter**.
+   - This ensures that future occurrences of these IPs are immediately blocked, improving the system's adaptability and security.
+
+6. **Result Aggregation and Storage**:
+   - The system aggregates results into four classifications:
+     - **Prohibited IPs**: Detected in the Bad IP Bloom Filter.
+     - **Safe IPs**: Detected in the Good IP Bloom Filter.
+     - **Risky IPs**: Neither in the Good nor Bad filters, tracked for analysis.
+     - **Heavy Hitters**: Risky IPs identified by the Misra-Gries Algorithm as frequent offenders.
+   - The updated **Bad IP Bloom Filter** is persisted for future use.
+
+---
+
 ## Features
 - **Real-Time IP Anomaly Detection**: Immediate identification of malicious IPs.
 - **Scalable and Efficient**: Handles large datasets with minimal memory overhead.
