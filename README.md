@@ -199,3 +199,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any inquiries or feedback, please contact the project maintainer:
 
 https://www.linkedin.com/in/raj-tyagi-83765b21b/
+
+https://www.linkedin.com/in/tushar-sood-03927b238/
